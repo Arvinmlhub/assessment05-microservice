@@ -61,6 +61,7 @@ public class AuthorServiceImpl implements AuthorService {
         }catch (Exception e){
             log.error("Exception occurred while save the data...", e.getMessage());
             resultMap.put("status", "exception");
+            e.printStackTrace();
         }
         return resultMap;
 

@@ -20,10 +20,6 @@ public class Course implements Serializable {
 
 
     private Long authorId;
-//
-//    @Min(value = 5, message = "Value must be between 5 and 50")
-//    @Max(value = 50, message = "Value must be between 5 and 50")
-////@Pattern(regexp = "^(?:[5-9]|(?:[1-4][0-9])|50)$", message = "Value must be between 5 and 50")
 
 private Long duration;
 

@@ -59,6 +59,7 @@ public class CourseServiceImpl implements CourseService {
             if (Objects.nonNull(courseDao)){
                 Course course=new Course();
                 BeanUtils.copyProperties(courseDao,course);
+
                 course=courseRepository.save(course);
                 resultMap.put("courseId",course.getCourseId().toString());
             }

@@ -8,6 +8,7 @@ import java.io.Serializable;
 @Data
 public class AuthorDao implements Serializable {
     private String id;
-    private String author;
+    private String name;
     private String email;
+
 }

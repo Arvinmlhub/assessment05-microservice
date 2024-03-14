@@ -8,7 +8,7 @@ import java.io.Serializable;
 @Data
 public class CourseDao implements Serializable {
     private String courseName;
-    private String authorName;
+    private Long authorId;
     private Long duration;
     private Boolean availability=false;
 }

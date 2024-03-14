@@ -46,7 +46,9 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.AuthorMicroserviceApplication.executor": "Run",
+    "Spring Boot.AuthorMicroserviceApplication.executor": "Debug",
+    "Spring Boot.AuthorMicroserviceApplication2020.executor": "Run",
+    "Spring Boot.AuthorMicroserviceApplication2021.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Traning/assessment05/microservice-with-cloud-config/AuthorMicroservice/src/main/java/com/metlife",
@@ -55,9 +57,13 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reactor",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Traning\assessment05\microservice-with-cloud-config\AuthorMicroservice\src\main\java\com\metlife" />
@@ -67,15 +73,29 @@
       <recent name="com.metlife.dao" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="AuthorMicroserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.AuthorMicroserviceApplication2021">
+    <configuration name="AuthorMicroserviceApplication2020" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="AuthorMicroservice" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.metlife.AuthorMicroserviceApplication" />
+      <option name="VM_PARAMETERS" value="-Dserver.port=2020" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AuthorMicroserviceApplication2021" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="AuthorMicroservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.metlife.AuthorMicroserviceApplication" />
+      <option name="VM_PARAMETERS" value="-Dserver.port=2021" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.AuthorMicroserviceApplication2020" />
+      <item itemvalue="Spring Boot.AuthorMicroserviceApplication2021" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -92,11 +112,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710413016140</updated>
-      <workItem from="1710413017248" duration="7864000" />
+      <workItem from="1710413017248" duration="9781000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
