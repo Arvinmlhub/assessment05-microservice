@@ -19,7 +19,7 @@ public class AuthorController {
 
 
     @GetMapping
-    public AuthorDto getCourses(@RequestParam(defaultValue = "0",required = false) int page,
+    public Map<String, Object> getCourses(@RequestParam(defaultValue = "0",required = false) int page,
                                 @RequestParam(defaultValue = "10", required = false) int size){
         return authorService.getAuthors(page,size);
     }
@@ -43,7 +43,5 @@ public class AuthorController {
     public Author getAuthorsById(@PathVariable Long authorId){
         return authorService.getAuthorsById(authorId);
     }
-
-
 
 }

@@ -17,5 +17,7 @@ public interface CourseService {
     Map<String, String> deleteCourse(Long courseId);
 
 
-    Author getAuthorsById(Long authorId);
+    Map<String, Object> getAuthorsById(Long authorId);
+
+    public Map<String, Object> getAuthors(int page, int size);
 }

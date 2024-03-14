@@ -28,18 +28,21 @@ public class AuthorServiceImpl implements AuthorService {
         @Autowired
         private AuthorRepository authorRepository;
     @Override
-    public AuthorDto getAuthors(int page, int size) {
+    public Map<String, Object> getAuthors(int page, int size) {
+        Map<String, Object> resultMap=new HashMap<>();
+
         AuthorDto authorDto=new AuthorDto();
 
         try{
             Page<Author> authors= authorRepo.findAll(PageRequest.of(page,size));
             authorDto.setCount(authors.getTotalElements());
             authorDto.setAuthors(authors.getContent());
+            resultMap.put("data",authorDto);
 
         }catch (Exception e){
             log.error("Exception occurred while getting courses.. ");
         }
-        return authorDto;
+        return resultMap;
 
     }
 

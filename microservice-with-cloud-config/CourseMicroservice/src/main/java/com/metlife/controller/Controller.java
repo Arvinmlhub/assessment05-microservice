@@ -42,10 +42,18 @@ public class Controller {
     }
 
     @GetMapping("/getAllCourses/author/{authorId}")
-    public Author getAuthorsById(@PathVariable  Long authorId){
+    public Map<String, Object> getAuthorsById(@PathVariable  Long authorId){
 
         return courseService.getAuthorsById(authorId);
     }
+
+    @GetMapping("/authors")
+    public  Map<String, Object> getAuthors(@RequestParam(defaultValue = "0", required = false)
+                                           int page, @RequestParam(defaultValue = "10", required = false) int size){
+        return courseService.getAuthors(page, size)
+;
+    }
+
 
 
 

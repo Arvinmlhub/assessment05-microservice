@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -109,9 +110,24 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public Author getAuthorsById( Long authorId) {
-
-        return authorProxy.getAuthorsById(authorId);
+    public Map<String, Object> getAuthorsById( Long authorId) {
+        Map<String, Object> resumtMap=new HashMap<>();
+        try {
+            Author author=authorProxy.getAuthorsById(authorId);
+            List<Course> courses= courseRepository.getByAuthorId(authorId);
+            resumtMap.put("author",author);
+            resumtMap.put("courses",courses);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return resumtMap;
     }
 
+
+    public Map<String, Object> getAuthors(int page, int size) {
+
+            return authorProxy.getCourses(page,size);
+
+
+    }
 }

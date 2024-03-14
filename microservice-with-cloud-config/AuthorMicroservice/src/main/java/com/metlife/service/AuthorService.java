@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface AuthorService {
-    AuthorDto getAuthors(int page , int size);
+    Map<String, Object> getAuthors(int page , int size);
     Map<String, String> saveAuthor(AuthorDao authorDao);
 
     Map<String, String> updateAuthor(AuthorDao authorDao, Long authorId);
