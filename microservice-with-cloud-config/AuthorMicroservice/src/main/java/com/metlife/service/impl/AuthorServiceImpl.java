@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -26,7 +27,7 @@ public class AuthorServiceImpl implements AuthorService {
 
         @Autowired
         private AuthorRepository authorRepository;
-
+    @Override
     public AuthorDto getAuthors(int page, int size) {
         AuthorDto authorDto=new AuthorDto();
 
@@ -61,7 +62,7 @@ public class AuthorServiceImpl implements AuthorService {
         return resultMap;
 
     }
-
+    @Override
     public Map<String, String> updateAuthor(AuthorDao authorDao, Long authorId) {
         Map<String, String>  resultMap=new HashMap<>();
 
@@ -81,7 +82,7 @@ public class AuthorServiceImpl implements AuthorService {
         return resultMap;
 
     }
-
+    @Override
     public Map<String, String> deleteAuthor(Long authorId) {
         Map<String, String>  resultMap=new HashMap<>();
         try {
@@ -96,6 +97,22 @@ public class AuthorServiceImpl implements AuthorService {
             resultMap.put("status", "exception");
         }
         return resultMap;
+
+    }
+
+    @Override
+    public Author getAuthorsById(Long authorId){
+        Author author=new Author();
+        try{
+            if (authorId!=0){
+                Optional<Author> optionalAuthor= authorRepository.findById(authorId);
+                if (optionalAuthor.isPresent())
+                    author=optionalAuthor.get();
+            }
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }
+        return author;
 
     }
 }

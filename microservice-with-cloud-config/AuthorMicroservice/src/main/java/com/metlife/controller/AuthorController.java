@@ -3,6 +3,7 @@ package com.metlife.controller;
 
 import com.metlife.dao.AuthorDao;
 import com.metlife.dto.AuthorDto;
+import com.metlife.entity.Author;
 import com.metlife.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -38,6 +39,10 @@ public class AuthorController {
         return authorService.deleteAuthor(authorId);
     }
 
+    @GetMapping("/{authorId}")
+    public Author getAuthorsById(@PathVariable Long authorId){
+        return authorService.getAuthorsById(authorId);
+    }
 
 
 
