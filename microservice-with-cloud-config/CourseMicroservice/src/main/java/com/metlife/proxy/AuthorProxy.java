@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(name = "Author-MS", url = "http://localhost:2020")
 public interface AuthorProxy {
-    @GetMapping("/{authorId}")
+    @GetMapping("/api/v1/author/{authorId}")
     public Author getAuthorsById(@PathVariable Long authorId);
 
 }

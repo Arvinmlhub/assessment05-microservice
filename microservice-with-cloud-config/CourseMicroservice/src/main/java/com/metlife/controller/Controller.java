@@ -2,6 +2,7 @@ package com.metlife.controller;
 
 import com.metlife.CourseDao;
 import com.metlife.dto.CourseDto;
+import com.metlife.entity.Author;
 import com.metlife.repo.CourseRepo;
 import com.metlife.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,11 @@ public class Controller {
         return courseService.deleteCourse(courseId);
     }
 
+    @GetMapping("/getAllCourses/author/{authorId}")
+    public Author getAuthorsById(@PathVariable  Long authorId){
 
+        return courseService.getAuthorsById(authorId);
+    }
 
 
 

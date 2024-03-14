@@ -32,6 +32,7 @@ public class CourseServiceImpl implements CourseService {
     private CourseRepository courseRepository;
 
 
+    @Autowired
     private AuthorProxy authorProxy;
     public CourseDto getCourses(int page , int size){
         CourseDto courseDto=new CourseDto();
@@ -109,6 +110,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public Author getAuthorsById( Long authorId) {
+
         return authorProxy.getAuthorsById(authorId);
     }
 
