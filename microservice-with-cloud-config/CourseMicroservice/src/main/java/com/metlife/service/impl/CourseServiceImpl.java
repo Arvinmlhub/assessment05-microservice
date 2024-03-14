@@ -2,7 +2,9 @@ package com.metlife.service.impl;
 
 import com.metlife.CourseDao;
 import com.metlife.dto.CourseDto;
+import com.metlife.entity.Author;
 import com.metlife.entity.Course;
+import com.metlife.proxy.AuthorProxy;
 import com.metlife.repo.CourseRepo;
 import com.metlife.repo.CourseRepository;
 import com.metlife.service.CourseService;
@@ -12,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,6 +30,9 @@ public class CourseServiceImpl implements CourseService {
 
     @Autowired
     private CourseRepository courseRepository;
+
+
+    private AuthorProxy authorProxy;
     public CourseDto getCourses(int page , int size){
         CourseDto courseDto=new CourseDto();
 
@@ -100,4 +106,10 @@ public class CourseServiceImpl implements CourseService {
         return resultMap;
 
     }
+
+    @Override
+    public Author getAuthorsById( Long authorId) {
+        return authorProxy.getAuthorsById(authorId);
+    }
+
 }
